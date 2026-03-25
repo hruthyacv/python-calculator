@@ -1,19 +1,18 @@
 # python-calculator
 A simple calculator using python
-# Python Calculator
 
-This is a simple calculator built using Python.
+# Python Calculator 🔢
 
-## Features
-- Addition
-- Subtraction
-- Multiplication
-- Division
+A simple command-line calculator built using Python with proper input validation and continuous operation.
 
-## How to Run
-
-1. Download the file
-2. Run:
-
+## 🚀 Features
+- Continuous loop (no restart needed)
+- Input validation (no crashes on wrong input)
+- Supports:
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
+- Clean and structured code<br>
 ## Author
 Hruthya C V

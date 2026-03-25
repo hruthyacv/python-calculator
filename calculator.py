@@ -9,33 +9,50 @@ def multiply(x, y):
 
 def divide(x, y):
     if y == 0:
-        return "Error! Division by zero."
+        return "Error! Cannot divide by zero."
     return x / y
 
 
-print("Simple Python Calculator")
-print("Operations:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
+def get_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
-choice = input("Enter choice (1/2/3/4): ")
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+def show_menu():
+    print("\n===== Python Calculator =====")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Exit")
 
-if choice == '1':
-    print("Result:", add(num1, num2))
 
-elif choice == '2':
-    print("Result:", subtract(num1, num2))
+while True:
+    show_menu()
+    choice = input("Choose an option (1-5): ")
 
-elif choice == '3':
-    print("Result:", multiply(num1, num2))
+    if choice == '5':
+        print("Exiting calculator. Goodbye!")
+        break
 
-elif choice == '4':
-    print("Result:", divide(num1, num2))
+    if choice not in ['1', '2', '3', '4']:
+        print("Invalid choice. Try again.")
+        continue
 
-else:
-    print("Invalid input")
+    num1 = get_number("Enter first number: ")
+    num2 = get_number("Enter second number: ")
+
+    if choice == '1':
+        print("Result:", add(num1, num2))
+
+    elif choice == '2':
+        print("Result:", subtract(num1, num2))
+
+    elif choice == '3':
+        print("Result:", multiply(num1, num2))
+
+    elif choice == '4':
+        print("Result:", divide(num1, num2))

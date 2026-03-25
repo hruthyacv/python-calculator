@@ -14,7 +14,6 @@ This is a simple calculator built using Python.
 
 1. Download the file
 2. Run:
-<br>
 
 ## Author
 Hruthya C V

@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Calculator</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Calculator</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="calculator">
-    <input type="text" id="display" value="0" disabled>
+<div class="app">
 
-    <div class="buttons">
-        <!-- Top row -->
-        <button class="gray" onclick="clearDisplay()">C</button>
-        <button class="gray" onclick="setOperator('/')">÷</button>
-        <button class="gray" onclick="setOperator('*')">×</button>
-        <button class="orange" onclick="setOperator('-')">−</button>
-
-        <!-- Row 2 -->
-        <button onclick="append('7')">7</button>
-        <button onclick="append('8')">8</button>
-        <button onclick="append('9')">9</button>
-        <button class="orange" onclick="setOperator('+')">+</button>
-
-        <!-- Row 3 -->
-        <button onclick="append('4')">4</button>
-        <button onclick="append('5')">5</button>
-        <button onclick="append('6')">6</button>
-        <button class="orange" onclick="calculate()">=</button>
-
-        <!-- Row 4 -->
-        <button onclick="append('1')">1</button>
-        <button onclick="append('2')">2</button>
-        <button onclick="append('3')">3</button>
-
-        <!-- Row 5 -->
-        <button class="zero" onclick="append('0')">0</button>
-        <button onclick="append('.')">.</button>
+    <!-- Theme Picker -->
+    <div class="theme-picker">
+        <button onclick="setTheme('spring')">🌸 Spring</button>
+        <button onclick="setTheme('winter')">❄️ Winter</button>
+        <button onclick="setTheme('lavender')">💜 Lavender</button>
     </div>
+
+    <!-- Calculator -->
+    <div class="calculator">
+
+        <div class="display">
+            <div id="historyDisplay"></div>
+            <div id="display">0</div>
+        </div>
+
+        <div class="buttons">
+            <button class="gray" onclick="clearDisplay()">C</button>
+            <button onclick="setOperator('/')">÷</button>
+            <button onclick="setOperator('*')">×</button>
+            <button class="accent" onclick="setOperator('-')">−</button>
+
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button class="accent" onclick="setOperator('+')">+</button>
+
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            <button class="accent" onclick="calculate()">=</button>
+
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+
+            <button class="zero" onclick="append('0')">0</button>
+            <button onclick="append('.')">.</button>
+        </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-panel">
+        <h3>History</h3>
+        <ul id="historyList"></ul>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
